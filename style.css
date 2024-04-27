@@ -1,0 +1,292 @@
+/* Universal Styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.wrapper {
+  background-color: #001d37;
+  padding: 0 16px;
+  overflow: hidden;
+}
+
+.circle {
+  width: 617px;
+  height: 617px;
+  background-color: #d660ff;
+  opacity: 0.85;
+  border-radius: 50%;
+  filter: blur(150px);
+  position: absolute;
+  top: 62px;
+  right: -390px;
+}
+
+.circle-2 {
+  width: 617px;
+  height: 617px;
+  background-color: #6079ff;
+  opacity: 0.85;
+  border-radius: 50%;
+  filter: blur(150px);
+  position: absolute;
+  top: -365px;
+  left: -123px;
+}
+
+/* <uniquifier>: Use a unique and descriptive class name
+   <weight>: Use a value from 200 to 900 */
+
+/* .source-sans 3-<uniquifier > {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+.top-section {
+  color: white;
+  padding-top: 80px; /* Any device screen smaller than 600px will have this padding property. */
+  padding-bottom: 80px; /* Any device screen smaller than 600px will have this padding property. */
+  max-width: 1066px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Heading Section */
+.actual-top-content {
+  z-index: 2;
+  position: relative;
+}
+
+.top-section h1 {
+  margin-top: 0;
+  padding: 1%;
+  font-size: 4rem; /* Any device screen smaller than 600px will have this font size. */
+  font-weight: 700;
+  line-height: 97.3%;
+  max-width: 525px;
+}
+
+.intro-text {
+  font-size: 1.25rem;
+  line-height: 169.3%;
+  margin: 1rem 0;
+  max-width: 435px;
+}
+
+.intro-buttons {
+  margin-bottom: 70px; /* Any device screen smaller than 600px will have this margin property. */
+}
+
+.btn1 {
+  font-weight: 600;
+  background-color: #475aff;
+  border: 2px solid #475aff; /* makes the button the same size as the other button (the other button has a 2px border) */
+  color: white;
+  text-decoration: none;
+  padding: 13px 25px;
+  border-radius: 1000px;
+  margin-right: 10px;
+  font-family: sans-serif;
+  font-size: 1.125rem;
+  display: inline-block;
+  transition: background-color 0.3s ease-out, border 0.3s ease-out, color 0.3s ease-out;
+}
+
+.btn1:hover {
+  background-color: #2e40e2;
+  border: 2px solid #2e40e2;
+}
+
+.btn--outline {
+  background-color: transparent;
+  border: solid 2px white;
+}
+
+.btn--outline:hover {
+  background-color: #fff;
+  color: #475aff;
+  border: 2px solid #fff;
+}
+
+/* Intro Section */
+.intro-feature {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 33px 25px;
+}
+
+.intro-feature h2 {
+  font-size: 1.5rem;
+  margin: 31px 0 3px 0;
+}
+
+.intro-feature p {
+  margin: 0;
+  font-size: 1.0625rem;
+  text-align: justify; /* makes the text align evenly on both sides (R & L) */
+}
+
+/* Sets vertical & horizontal gap between items */
+.intro-features {
+  display: grid;
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+/* Sets columns to 2 for screen sizes over 580px. Smaller screen sizes will have 1 column */
+@media screen and (min-width: 580px) {
+  .intro-features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .intro-features {
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Sets the content of the card to display in 4 columns side-by-side */
+  }
+}
+
+/* Bottom Section */
+.page-section {
+  background-color: #fff;
+  padding: 70px 16px;
+}
+
+.page-section-inner {
+  max-width: 1066px;
+  margin: 0 auto;
+}
+
+.page-section-title {
+  font-size: 4rem;
+  margin: 0;
+  line-height: 1;
+}
+
+.pet-filter {
+  color: #9f9f9f;
+  font-size: 1.15rem;
+}
+
+.pet-filter button {
+  background-color: transparent;
+  border: none;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.15rem;
+  color: #9f9f9f;
+}
+
+/* Sets the content of the card to display in 2 columns side-by-side */
+.list-of-pets {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(340px, 1fr)
+  ); /* sets a min width for this div for multiple columns, 
+    once the screen size falls below the size it can display 2 columns it 
+    converts to 1 column. */
+  column-gap: 34px;
+  row-gap: 16px;
+}
+
+/* Sets the content of the card to display in 2 columns side-by-side */
+.pet-card {
+  display: grid;
+  grid-template-columns: 165px 1fr;
+  border-radius: 20px;
+  border: 1px solid #f3f3f3;
+  background: #fff;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* keeps the img within the div boundary and has no overlapping areas */
+}
+
+/* As the HTML for the card is text first and photo second 
+(this way for visually impaired visitors) this swaps that order around visually */
+.pet-card-photo {
+  order: 1;
+  grid-row: 1;
+}
+
+/* Makes the image adjust to match the size of the container (when the text portion has more added to it). Becomes responsive */
+.pet-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pet-card-text {
+  padding: 18px 16px;
+}
+
+.pet-card-text h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.625rem;
+  font-weight: 600;
+}
+
+.pet-description {
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+  color: #626262;
+  line-height: 150%;
+}
+
+.pet-age {
+  color: #a2a2a2;
+  font-size: 0.85rem;
+}
+/* Footer Section */
+.site-footer p {
+  text-align: center;
+  color: #a6a6a6;
+  font-size: 0.875rem;
+  margin: 0;
+  padding: 0 0 65px 0;
+}
+
+@media screen and (min-width: 600px) {
+  .pet-description {
+    font-size: 1rem;
+  }
+  .pet-card-text {
+    padding: 21px 29px;
+  }
+  .list-of-pets {
+    row-gap: 28px;
+  }
+  .pet-filter {
+    font-size: 1.375rem;
+  }
+
+  .pet-filter button {
+    font-size: 1.375rem;
+  }
+  .page-section-title {
+    font-size: 5.31rem;
+  }
+
+  .page-section {
+    padding: 130px 16px;
+  }
+
+  .intro-buttons {
+    margin-bottom: 129px; /* any device screen larger than 600px will have this margin property */
+  }
+
+  .top-section h1 {
+    font-size: 6.25rem; /* any device screen larger than 600px will have this font size */
+  }
+
+  .top-section {
+    padding-top: 139px; /* any device screen larger than 600px will have this padding property */
+    padding-bottom: 139px; /* any device screen larger than 600px will have this padding property */
+  }
+}
