@@ -1,9 +1,12 @@
 const template = document.querySelector('#pet-card-template');
 const wrapper = document.createDocumentFragment();
 
-// https://www.meteosource.com/api/v1/free/find_places?text=Landsdale&language=en&key=d4h08vj6oqaxp6wvfndtwdija72hvqng406yt58s
+// (initial) https://www.meteosource.com/api/v1/free/find_places?text=Landsdale&language=en&key=d4h08vj6oqaxp6wvfndtwdija72hvqng406yt58s
 
-// https://www.meteosource.com/api/v1/free/point?lat=31.809&lon=115.839&sections=current%2Chourly&timezone=Australia%2FPerth&language=en&units=metric&key=d4h08vj6oqaxp6wvfndtwdija72hvqng406yt58s
+// (updated) https://www.meteosource.com/api/v1/free/point?lat=31.809&lon=115.839&sections=current%2Chourly&timezone=Australia%2FPerth&language=en&units=metric&key=d4h08vj6oqaxp6wvfndtwdija72hvqng406yt58s
+
+// MongoDB connection string
+// mongodb+srv://mckiee:Anfield008@mycluster.84w3kxe.mongodb.net/
 
 async function start() {
   const weatherPromise = await fetch(
@@ -19,7 +22,7 @@ start();
 
 async function petsArea() {
   const petsPromise = await fetch(
-    'https://learnwebcode.github.io/bootcamp-pet-data/pets.json',
+    'https://chipper-torrone-9b8168.netlify.app/.netlify/functions/pets',
   );
   const petsData = await petsPromise.json();
   petsData.forEach((pet) => {
