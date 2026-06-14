@@ -5,14 +5,14 @@ const wrapper = document.createDocumentFragment();
 
 // (updated) https://www.meteosource.com/api/v1/free/point?lat=31.809&lon=115.839&sections=current%2Chourly&timezone=Australia%2FPerth&language=en&units=metric&key=d4h08vj6oqaxp6wvfndtwdija72hvqng406yt58s
 
-// openweathermap.org api
-// https://api.openweathermap.org/data/4.0/onecall/current?lat={31.809}&lon={115.839}&appid={88e4eee7c08960a0db7700a99934cd13}
+// weatherapi.com
+// http://api.weatherapi.com/v1/current.json/key=a905269254124490b7772422261406
 // MongoDB connection string
 // mongodb+srv://mckiee:Anfield008@mycluster.84w3kxe.mongodb.net/
 
 async function start() {
   const weatherPromise = await fetch(
-    'https://api.openweathermap.org/data/4.0/onecall/current?lat={31.809}&lon={115.839}&appid={35501cc45077250601c96cf72d594ce0}',
+    'http://api.weatherapi.com/v1/current.json?key=c49777daabd7406898972832261406&q=Perth&aqi=no',
   );
   const weatherData = await weatherPromise.json();
   const currentTemp = weatherData.current.temperature;
