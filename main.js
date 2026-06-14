@@ -8,7 +8,7 @@ const wrapper = document.createDocumentFragment();
 
 async function start() {
   const weatherPromise = await fetch(
-    'http://api.weatherapi.com/v1/current.json?key=c49777daabd7406898972832261406&q=Perth&aqi=no',
+    'https://api.weatherapi.com/v1/current.json?key=c49777daabd7406898972832261406&q=Perth&aqi=no',
   );
   const weatherData = await weatherPromise.json();
   const currentTemp = weatherData.current.temp_c;
