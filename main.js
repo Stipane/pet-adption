@@ -12,7 +12,7 @@ const wrapper = document.createDocumentFragment();
 
 async function start() {
   const weatherPromise = await fetch(
-    'https://api.openweathermap.org/data/4.0/onecall/current?lat={31.809}&lon={115.839}&appid={88e4eee7c08960a0db7700a99934cd13}',
+    'https://api.openweathermap.org/data/4.0/onecall/current?lat={31.809}&lon={115.839}&appid={35501cc45077250601c96cf72d594ce0}',
   );
   const weatherData = await weatherPromise.json();
   const currentTemp = weatherData.current.temperature;
