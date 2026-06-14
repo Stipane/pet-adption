@@ -15,7 +15,7 @@ async function start() {
     'http://api.weatherapi.com/v1/current.json?key=c49777daabd7406898972832261406&q=Perth&aqi=no',
   );
   const weatherData = await weatherPromise.json();
-  const currentTemp = weatherData.current.temperature;
+  const currentTemp = weatherData.current.temp_c;
   document.querySelector('#temp').textContent = currentTemp;
   // console.log(weatherData.current.temperature);
 }
