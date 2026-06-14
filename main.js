@@ -1,10 +1,6 @@
 const template = document.querySelector('#pet-card-template');
 const wrapper = document.createDocumentFragment();
 
-// (initial) https://www.meteosource.com/api/v1/free/find_places?text=Landsdale&language=en&key=d4h08vj6oqaxp6wvfndtwdija72hvqng406yt58s
-
-// (updated) https://www.meteosource.com/api/v1/free/point?lat=31.809&lon=115.839&sections=current%2Chourly&timezone=Australia%2FPerth&language=en&units=metric&key=d4h08vj6oqaxp6wvfndtwdija72hvqng406yt58s
-
 // weatherapi.com
 // http://api.weatherapi.com/v1/current.json/key=a905269254124490b7772422261406
 // MongoDB connection string
@@ -16,8 +12,9 @@ async function start() {
   );
   const weatherData = await weatherPromise.json();
   const currentTemp = weatherData.current.temp_c;
+  console.log(currentTemp);
   document.querySelector('#temp').textContent = currentTemp;
-  // console.log(weatherData.current.temperature);
+  console.log(weatherData.current.temp_c);
 }
 
 start();
