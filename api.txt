@@ -1,0 +1,1 @@
+https://www.meteosource.com/api/v1/free/find_places?text=Landsdale&language=en&key=d4h08vj6oqaxp6wvfndtwdija72hvqng406yt58s
