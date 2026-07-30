@@ -1,0 +1,18 @@
+async function petsArea() {
+  try {
+    const response = await fetch(
+      'https://chipper-torrone-9b8168.netlify.app/.netlify/functions/pets'
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const petsData = await response.json();
+    // render pets...
+  } catch (err) {
+    console.error("Couldn't load pets:", err);
+    document.querySelector(".list-of-pets").textContent =
+      "Sorry, we couldn't load the pets right now.";
+  }
+}
