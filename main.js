@@ -1,5 +1,4 @@
 const template = document.querySelector('#pet-card-template');
-console.log(template);
 const wrapper = document.createDocumentFragment();
 
 // weatherapi.com
@@ -21,9 +20,7 @@ async function petsArea() {
     const petsPromise = await fetch(
       'https://chipper-torrone-9b8168.netlify.app/.netlify/functions/pets',
     );
-    console.log(petsPromise.status);
     const petsData = await petsPromise.json();
-    console.log(petsData);
     petsData.forEach((pet) => {
       const clone = template.content.cloneNode(true);
       clone.querySelector('.pet-card').dataset.species = pet.species;
